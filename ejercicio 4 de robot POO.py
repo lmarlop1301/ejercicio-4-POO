@@ -27,26 +27,17 @@ class Robot():
     def getfuncion(self):
         return self.__funcion
 
-    funciona="si"
     def setfunciona(self,funciona):
         self.__funciona=funciona
     def getfunciona(self):
         return self.__funciona
-    def alta(self):
-        self.funciona="si"
-    def baja(self):
-        if self.funciona=="no":
-            print ("el robot esta de baja")
-        else:
-            print ("el robot esta de alta")
+    
 class RobotDeCocina(Robot):  
-    def __init__(self,temporizador,temperatura,nombre,ruedas,color,largo,ancho,funcion,habla,funciona):
+    def __init__(self,temporizador,temperatura,nombre,color,largo,ancho,funcion,funciona):
         self.__temporizador=temporizador
         self.__temperatura=temperatura
-        super().__init__(nombre,ruedas,color,largo,ancho,funcion,habla,funciona)
-        self.habla=False
-        self.temporizador=False
-        self.temperatura=False
+        super().__init__(nombre,color,largo,ancho,funcion,funciona)
+        
     def settemporizador(self,temporizador):
         self.__temporizador=temporizador
     def gettemporizador(self):
@@ -89,37 +80,37 @@ if __name__=="__main__":
         color=input("de que color quieres que sea en robot:")
         largo=input("que largo quieres que tenga tu robot:")
         ancho=input("que ancho quieres que tenga el robot:")
-        funcion=input("su robot limpia?")
-        if funcion.lower()=="si":
+        pregunta2=input("su robot limpia?")
+        funciona=input("esta el robot funcionando?:")
+        funcion="1"
+        if pregunta2.lower()=="si":
+            funcion="limpia"
             posicion=input("que posicion tiene:")
             ruedas=input("cuantas ruedas quieres que tenga:")
-            miRobot=RobotDeLimpieza(nombre,color,largo,ancho,funcion,posicion,ruedas)
+            miRobot=RobotDeLimpieza(posicion,ruedas,nombre,color,largo,ancho,funcion,funciona)
         else:
+            funcion="cocina"
             temporizador=input("tiene temporizador:")
             temperatura=input("tiene temperatura?:")
-            miRobot=RobotDeCocina(nombre,color,largo,ancho,funcion,temporizador,temperatura)
-        funciona=input("esta el robot funcionando?:")
+            miRobot=RobotDeCocina(temporizador,temperatura,nombre,color,largo,ancho,funcion,funciona)
+        
         
         lista_caracteristicas_robot.append(miRobot)
         pregunta=input("desea introducir otro robot?")
 
     for x in range(0,len(lista_caracteristicas_robot)):
         print("su nombre es",lista_caracteristicas_robot[x].getnombre())
-        print("tiene",lista_caracteristicas_robot[x].getruedas(), "ruedas")
         print("su color es",lista_caracteristicas_robot[x].getcolor())
         print("de largo tiene",lista_caracteristicas_robot[x].getlargo(),"cm")
         print("de ancho tiene",lista_caracteristicas_robot[x].getancho(),"cm")
-        if funcion.lower()=="si":
+        if lista_caracteristicas_robot[x].getfuncion()=="limpia":
             print("su robot limpia",lista_caracteristicas_robot[x].getfuncion())
             print("su posicion es",lista_caracteristicas_robot[x].getposicion())
+            print("tiene",lista_caracteristicas_robot[x].getruedas(), "ruedas")
         else:
             print("su robot limpia",lista_caracteristicas_robot[x].getfuncion(),"por lo que es un robot de cocina")
-            print("tiene temperstura:",lista_caracteristicas_robot[x].gettemperatura())
+            print("tiene temperatura:",lista_caracteristicas_robot[x].gettemperatura())
             print("tiene temporizador",lista_caracteristicas_robot[x].gettemporizador())
-        print("el robot funciona:",lista_caracteristicas_robot[x].getfunciona())
-        print("tiene una posicion:",self.posicion)
-        print("tiene temporizador:",self.temporizador)
-        print("tiene temperatura:",self.temperatura)
-      
-        
+            print("el robot funciona:",lista_caracteristicas_robot[x].getfunciona())
+                    
 
