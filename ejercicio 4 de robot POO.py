@@ -104,7 +104,7 @@ if __name__=="__main__":
         print("de largo tiene",lista_caracteristicas_robot[x].getlargo(),"cm")
         print("de ancho tiene",lista_caracteristicas_robot[x].getancho(),"cm")
         if lista_caracteristicas_robot[x].getfuncion()=="limpia":
-            print("su robot limpia",lista_caracteristicas_robot[x].getfuncion())
+            print("su robot",lista_caracteristicas_robot[x].getfuncion())
             print("su posicion es",lista_caracteristicas_robot[x].getposicion())
             print("tiene",lista_caracteristicas_robot[x].getruedas(), "ruedas")
         else:
