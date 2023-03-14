@@ -108,7 +108,7 @@ if __name__=="__main__":
             print("su posicion es",lista_caracteristicas_robot[x].getposicion())
             print("tiene",lista_caracteristicas_robot[x].getruedas(), "ruedas")
         else:
-            print("su robot limpia",lista_caracteristicas_robot[x].getfuncion(),"por lo que es un robot de cocina")
+            print("su robot ",lista_caracteristicas_robot[x].getfuncion())
             print("tiene temperatura:",lista_caracteristicas_robot[x].gettemperatura())
             print("tiene temporizador",lista_caracteristicas_robot[x].gettemporizador())
             print("el robot funciona:",lista_caracteristicas_robot[x].getfunciona())
