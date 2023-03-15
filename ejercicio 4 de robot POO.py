@@ -111,6 +111,6 @@ if __name__=="__main__":
             print("su robot ",lista_caracteristicas_robot[x].getfuncion())
             print("tiene temperatura:",lista_caracteristicas_robot[x].gettemperatura())
             print("tiene temporizador",lista_caracteristicas_robot[x].gettemporizador())
-            print("el robot funciona:",lista_caracteristicas_robot[x].getfunciona())
+            print("el robot esta de alta?",lista_caracteristicas_robot[x].getfunciona())
                     
 
