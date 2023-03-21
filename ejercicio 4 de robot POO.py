@@ -82,7 +82,7 @@ if __name__=="__main__":
         ancho=input("que ancho quieres que tenga el robot:")
         pregunta2=input("su robot limpia?")
         funciona=input("esta el robot funcionando?:")
-        funcion="1"
+        
         if pregunta2.lower()=="si":
             funcion="limpia"
             posicion=input("que posicion tiene:")
